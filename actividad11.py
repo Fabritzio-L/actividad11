@@ -8,3 +8,7 @@ for i in range(cantidad_propietarios):
     cantidad_vehiculos= int(input("Ingrese cantidad de vehiculos que posee: "))
     for j in range(cantidad_vehiculos):
         placa = input("Ingrese numero de placa del vehiculo: ")
+        marca= input("Ingrese marca del vehiculo: ")
+        modelo = input("Ingrese modelo del vehiculo: ")
+        año = int(input("Ingrese año del vehiculo: "))
+        estado_impuesto = input("¿Pagó el impuesto (Si/No)?: ").lower()
