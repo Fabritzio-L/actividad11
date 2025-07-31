@@ -23,16 +23,14 @@ for i in range(cantidad_propietarios):
     propietarios[nit]= {
         "nombre": nombre,
         "telefono": telefono,
+        "vehiculos":vehiculos
     }
 print("\nRegistro de propietarios y sus vehiculos")
 for nit, datos in propietarios.items():
     print(f"\nNIT: {nit}")
     print(f"Nombre: {datos["nombre"]}")
     print(f"Numero de contacto: {datos["telefono"]}")
-    for placa, data in vehiculos.items():
-        print("\nVehiculo")
-        print(f"Placa: {placa}")
-        print(f"Marca: {data["marca"]}")
-        print(f"Modelo: {data["modelo"]}")
-        print(f"Año: {data["año"]}")
-        print(f"Ha pagado el impuesto: {data["impuesto"]}")
+    print("\nVehiculos")
+    for placa, data in datos["vehiculos"].items():
+        print(f"-Placa: {placa}|{data["marca"]} {data["modelo"]}({data["año"]})|Impuesto: {data["impuesto"]}")
+
