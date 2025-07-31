@@ -2,7 +2,7 @@ propietarios ={}
 cantidad_propietarios=int(input("¿Cuantos propietarios desea ingresar?: "))
 for i in range(cantidad_propietarios):
     print(f"\nPropietario {i+1}")
-    nit = int(input("Ingrese numero de NIT: "))
+    nit = input("Ingrese numero de NIT: ")
     nombre= input("Ingrese nombre completo del propietario: ")
     telefono= input("Ingrese numero de contacto: ")
     cantidad_vehiculos= int(input("Ingrese cantidad de vehiculos que posee: "))
@@ -33,4 +33,11 @@ for nit, datos in propietarios.items():
     print("\nVehiculos")
     for placa, data in datos["vehiculos"].items():
         print(f"-Placa: {placa}|{data["marca"]} {data["modelo"]}({data["año"]})|Impuesto: {data["impuesto"]}")
-
+buscar_nit= input("\nIngrese el nit del propietario a buscar: ")
+if buscar_nit in propietarios:
+    print(f"Nombre: {propietarios[buscar_nit]["nombre"]}")
+    print(f"Telefono: {propietarios[buscar_nit]["telefono"]}")
+    for placa, data in propietarios[buscar_nit]["vehiculos"].items():
+        print(f"-Placa: {placa}|{data["marca"]} {data["modelo"]}({data["año"]})|Impuesto: {data["impuesto"]}")
+else:
+    print("Nit no encontrado.")
