@@ -11,4 +11,17 @@ for i in range(cantidad_propietarios):
         marca= input("Ingrese marca del vehiculo: ")
         modelo = input("Ingrese modelo del vehiculo: ")
         año = int(input("Ingrese año del vehiculo: "))
-        estado_impuesto = input("¿Pagó el impuesto (Si/No)?: ").lower()
+        impuesto_pagado = input("¿Pagó el impuesto (Si/No)?: ").lower()
+    propietarios[NIT]= {
+        "nombre": nombre,
+        "telefono": telefono,
+        "vehiculos": [
+            {
+                "placa": placa,
+                "marca": marca,
+                "modelo": modelo,
+                "año": año,
+                "impuesto pagado": impuesto_pagado
+            }
+        ]
+    }
