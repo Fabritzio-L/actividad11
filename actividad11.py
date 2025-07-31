@@ -1,0 +1,10 @@
+propietarios ={}
+cantidad_propietarios=int(input("¿Cuantos propietarios desea ingresar?: "))
+for i in range(cantidad_propietarios):
+    print(f"\nPropietario {i+1}")
+    NIT = int(input("Ingrese numero de NIT"))
+    nombre= input("Ingrese nombre completo del propietario: ")
+    telefono= input("Ingrese numero de contacto: ")
+    cantidad_vehiculos= int(input("Ingrese cantidad de vehiculos que posee: "))
+    for j in range(cantidad_vehiculos):
+        placa = input("Ingrese numero de placa del vehiculo: ")
