@@ -13,12 +13,12 @@ for i in range(cantidad_propietarios):
         marca= input("Ingrese marca del vehiculo: ")
         modelo = input("Ingrese modelo del vehiculo: ")
         año = int(input("Ingrese año del vehiculo: "))
-        impuesto_pagado = input("¿Pagó el impuesto (Si/No)?: ").lower()
+        impuesto = input("¿Pagó el impuesto (Si/No)?: ").lower()
         vehiculos[placa]={
             "marca": marca,
             "modelo": modelo,
             "año": año,
-            "impuesto": impuesto_pagado
+            "impuesto": impuesto
         }
     propietarios[nit]= {
         "nombre": nombre,
@@ -41,3 +41,13 @@ if buscar_nit in propietarios:
         print(f"-Placa: {placa}|{data["marca"]} {data["modelo"]}({data["año"]})|Impuesto: {data["impuesto"]}")
 else:
     print("Nit no encontrado.")
+pagados=0
+no_pagados=0
+for datos in propietarios.values():
+    for i in datos["vehiculos"].values():
+        if i["impuesto"] in ["si","sí"]:
+            pagados+=1
+        else:
+            no_pagados+=1
+print(f"\nVehiculos con impuesto pagado: {pagados}")
+print(f"Vehiculos sin el impuesto pagado: {no_pagados}")
